@@ -1,0 +1,186 @@
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+=================================================================
+Total params: 1
+Trainable params: 0
+Non-trainable params: 1
+_________________________________________________________________
+Type: "RANDOM_FOREST"
+Task: REGRESSION
+Label: "__LABEL"
+
+Input Features (7):
+        AGE
+        CLASIFFICATION_FINAL
+        ICU
+        INTUBED
+        MEDICAL_UNIT
+        PATIENT_TYPE
+        PNEUMONIA
+
+No weights
+
+Variable Importance: MEAN_MIN_DEPTH:
+    1.              "__LABEL" 10.842234 ################
+    2.         "MEDICAL_UNIT"  6.763061 ########
+    3.                  "ICU"  6.639722 ########
+    4.            "PNEUMONIA"  5.360959 #####
+    5. "CLASIFFICATION_FINAL"  5.177170 #####
+    6.         "PATIENT_TYPE"  3.019222 #
+    7.                  "AGE"  2.728704 
+    8.              "INTUBED"  2.416234 
+
+Variable Importance: NUM_AS_ROOT:
+    1. "PATIENT_TYPE" 170.000000 ################
+    2.      "INTUBED" 89.000000 ########
+    3.          "ICU" 33.000000 ###
+    4.    "PNEUMONIA"  7.000000 
+    5. "MEDICAL_UNIT"  1.000000 
+
+Variable Importance: NUM_NODES:
+    1.                  "AGE" 70970.000000 ################
+    2. "CLASIFFICATION_FINAL" 14266.000000 ###
+    3.                  "ICU" 4245.000000 
+    4.            "PNEUMONIA" 4234.000000 
+    5.         "MEDICAL_UNIT" 998.000000 
+    6.              "INTUBED" 763.000000 
+    7.         "PATIENT_TYPE" 262.000000 
+
+Variable Importance: SUM_SCORE:
+    1.         "PATIENT_TYPE" 70759.873968 ################
+    2.              "INTUBED" 62980.958612 #############
+    3.                  "AGE" 53666.268621 ###########
+    4.                  "ICU" 20848.972378 ##
+    5.         "MEDICAL_UNIT" 19792.226398 ##
+    6. "CLASIFFICATION_FINAL" 13126.447759 
+    7.            "PNEUMONIA" 11394.231118 
+
+
+
+Out-of-bag evaluation: rmse:0.200245
+Number of trees: 300
+Total number of nodes: 191776
+
+Number of nodes by tree:
+Count: 300 Average: 639.253 StdDev: 24.6715
+Min: 569 Max: 695 Ignored: 0
+----------------------------------------------
+[ 569, 575)  4   1.33%   1.33% #
+[ 575, 581)  0   0.00%   1.33%
+[ 581, 588)  3   1.00%   2.33% #
+[ 588, 594)  1   0.33%   2.67%
+[ 594, 600)  7   2.33%   5.00% ##
+[ 600, 607) 14   4.67%   9.67% ####
+[ 607, 613) 10   3.33%  13.00% ###
+[ 613, 619) 23   7.67%  20.67% #######
+[ 619, 626) 29   9.67%  30.33% ########
+[ 626, 632) 30  10.00%  40.33% #########
+[ 632, 638) 24   8.00%  48.33% #######
+[ 638, 645) 28   9.33%  57.67% ########
+[ 645, 651) 16   5.33%  63.00% #####
+[ 651, 657) 22   7.33%  70.33% ######
+[ 657, 664) 35  11.67%  82.00% ##########
+[ 664, 670) 19   6.33%  88.33% #####
+[ 670, 676) 18   6.00%  94.33% #####
+[ 676, 683) 10   3.33%  97.67% ###
+[ 683, 689)  5   1.67%  99.33% #
+[ 689, 695]  2   0.67% 100.00% #
+
+Depth by leafs:
+Count: 96038 Average: 10.8416 StdDev: 2.67941
+Min: 1 Max: 15 Ignored: 0
+----------------------------------------------
+[  1,  2)     1   0.00%   0.00%
+[  2,  3)    60   0.06%   0.06%
+[  3,  4)   196   0.20%   0.27%
+[  4,  5)   545   0.57%   0.84%
+[  5,  6)  1606   1.67%   2.51% #
+[  6,  7)  3576   3.72%   6.23% ###
+[  7,  8)  5896   6.14%  12.37% #####
+[  8,  9)  7992   8.32%  20.69% ######
+[  9, 10) 10062  10.48%  31.17% ########
+[ 10, 11) 11734  12.22%  43.39% #########
+[ 11, 12) 12782  13.31%  56.70% ##########
+[ 12, 13) 12624  13.14%  69.84% ##########
+[ 13, 14) 10965  11.42%  81.26% #########
+[ 14, 15)  8893   9.26%  90.52% #######
+[ 15, 15]  9106   9.48% 100.00% #######
+
+Number of training obs by leaf:
+Count: 96038 Average: 49.3492 StdDev: 283.737
+Min: 5 Max: 6770 Ignored: 0
+----------------------------------------------
+[    5,  343) 94391  98.29%  98.29% ##########
+[  343,  681)   463   0.48%  98.77%
+[  681, 1019)   550   0.57%  99.34%
+[ 1019, 1358)   175   0.18%  99.52%
+[ 1358, 1696)   129   0.13%  99.66%
+[ 1696, 2034)    19   0.02%  99.68%
+[ 2034, 2373)    10   0.01%  99.69%
+[ 2373, 2711)     1   0.00%  99.69%
+[ 2711, 3049)     0   0.00%  99.69%
+[ 3049, 3388)     0   0.00%  99.69%
+[ 3388, 3726)     0   0.00%  99.69%
+[ 3726, 4064)     0   0.00%  99.69%
+[ 4064, 4402)    19   0.02%  99.71%
+[ 4402, 4741)   180   0.19%  99.89%
+[ 4741, 5079)    64   0.07%  99.96%
+[ 5079, 5417)    30   0.03%  99.99%
+[ 5417, 5756)     0   0.00%  99.99%
+[ 5756, 6094)     0   0.00%  99.99%
+[ 6094, 6432)     5   0.01% 100.00%
+[ 6432, 6770]     2   0.00% 100.00%
+
+Attribute in nodes:
+        70970 : AGE [NUMERICAL]
+        14266 : CLASIFFICATION_FINAL [NUMERICAL]
+        4245 : ICU [NUMERICAL]
+        4234 : PNEUMONIA [NUMERICAL]
+        998 : MEDICAL_UNIT [NUMERICAL]
+        763 : INTUBED [NUMERICAL]
+        262 : PATIENT_TYPE [NUMERICAL]
+
+Attribute in nodes with depth <= 0:
+        170 : PATIENT_TYPE [NUMERICAL]
+        89 : INTUBED [NUMERICAL]
+        33 : ICU [NUMERICAL]
+        7 : PNEUMONIA [NUMERICAL]
+        1 : MEDICAL_UNIT [NUMERICAL]
+
+Attribute in nodes with depth <= 1:
+        266 : INTUBED [NUMERICAL]
+        211 : PATIENT_TYPE [NUMERICAL]
+        172 : PNEUMONIA [NUMERICAL]
+        86 : AGE [NUMERICAL]
+        60 : MEDICAL_UNIT [NUMERICAL]
+        58 : ICU [NUMERICAL]
+        46 : CLASIFFICATION_FINAL [NUMERICAL]
+
+Attribute in nodes with depth <= 2:
+        621 : AGE [NUMERICAL]
+        392 : INTUBED [NUMERICAL]
+        264 : PNEUMONIA [NUMERICAL]
+        238 : PATIENT_TYPE [NUMERICAL]
+        230 : MEDICAL_UNIT [NUMERICAL]
+        180 : CLASIFFICATION_FINAL [NUMERICAL]
+        112 : ICU [NUMERICAL]
+
+Attribute in nodes with depth <= 3:
+        1546 : AGE [NUMERICAL]
+        793 : CLASIFFICATION_FINAL [NUMERICAL]
+        475 : PNEUMONIA [NUMERICAL]
+        472 : INTUBED [NUMERICAL]
+        401 : MEDICAL_UNIT [NUMERICAL]
+        244 : PATIENT_TYPE [NUMERICAL]
+        186 : ICU [NUMERICAL]
+
+Attribute in nodes with depth <= 5:
+        7433 : AGE [NUMERICAL]
+        2569 : CLASIFFICATION_FINAL [NUMERICAL]
+        1041 : PNEUMONIA [NUMERICAL]
+        723 : ICU [NUMERICAL]
+        682 : MEDICAL_UNIT [NUMERICAL]
+        661 : INTUBED [NUMERICAL]
+        247 : PATIENT_TYPE [NUMERICAL]
+

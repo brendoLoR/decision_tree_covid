@@ -1,0 +1,303 @@
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+=================================================================
+Total params: 1
+Trainable params: 0
+Non-trainable params: 1
+_________________________________________________________________
+Type: "RANDOM_FOREST"
+Task: REGRESSION
+Label: "__LABEL"
+
+Input Features (20):
+        AGE
+        ASTHMA
+        CARDIOVASCULAR
+        CLASIFFICATION_FINAL
+        COPD
+        DIABETES
+        HIPERTENSION
+        ICU
+        INMSUPR
+        INTUBED
+        MEDICAL_UNIT
+        OBESITY
+        OTHER_DISEASE
+        PATIENT_TYPE
+        PNEUMONIA
+        PREGNANT
+        RENAL_CHRONIC
+        SEX
+        TOBACCO
+        USMER
+
+No weights
+
+Variable Importance: MEAN_MIN_DEPTH:
+    1.              "__LABEL" 11.290614 ################
+    2.               "ASTHMA" 11.116105 ###############
+    3.              "TOBACCO" 10.860266 ###############
+    4.       "CARDIOVASCULAR" 10.821985 ###############
+    5.        "OTHER_DISEASE" 10.786444 ###############
+    6.              "INMSUPR" 10.767443 ###############
+    7.                 "COPD" 10.633806 ##############
+    8.             "PREGNANT" 10.350489 ##############
+    9.                  "SEX" 10.296425 ##############
+   10.              "OBESITY" 10.152060 #############
+   11.        "RENAL_CHRONIC" 10.055297 #############
+   12.         "HIPERTENSION"  9.305308 ############
+   13.                "USMER"  9.100524 ###########
+   14.             "DIABETES"  8.543447 ##########
+   15.         "MEDICAL_UNIT"  7.421394 ########
+   16. "CLASIFFICATION_FINAL"  6.277247 ######
+   17.                  "ICU"  6.250348 ######
+   18.            "PNEUMONIA"  4.942292 ###
+   19.         "PATIENT_TYPE"  4.179771 ##
+   20.                  "AGE"  3.222420 
+   21.              "INTUBED"  2.914598 
+
+Variable Importance: NUM_AS_ROOT:
+    1. "PATIENT_TYPE" 124.000000 ################
+    2.      "INTUBED" 87.000000 ###########
+    3.          "ICU" 40.000000 #####
+    4.    "PNEUMONIA" 24.000000 ##
+    5.          "AGE" 13.000000 #
+    6. "MEDICAL_UNIT"  6.000000 
+    7.     "DIABETES"  5.000000 
+    8. "HIPERTENSION"  1.000000 
+
+Variable Importance: NUM_NODES:
+    1.                  "AGE" 52208.000000 ################
+    2. "CLASIFFICATION_FINAL" 10216.000000 ###
+    3.                "USMER" 7802.000000 ##
+    4.             "DIABETES" 5866.000000 #
+    5.         "HIPERTENSION" 5820.000000 #
+    6.              "OBESITY" 5707.000000 #
+    7.                  "SEX" 4527.000000 #
+    8.             "PREGNANT" 4445.000000 #
+    9.            "PNEUMONIA" 2953.000000 
+   10.                  "ICU" 2682.000000 
+   11.        "RENAL_CHRONIC" 1916.000000 
+   12.              "TOBACCO" 1530.000000 
+   13.       "CARDIOVASCULAR" 1154.000000 
+   14.              "INTUBED" 1149.000000 
+   15.         "MEDICAL_UNIT" 965.000000 
+   16.        "OTHER_DISEASE" 905.000000 
+   17.                 "COPD" 724.000000 
+   18.              "INMSUPR" 628.000000 
+   19.         "PATIENT_TYPE" 319.000000 
+   20.               "ASTHMA" 251.000000 
+
+Variable Importance: SUM_SCORE:
+    1.              "INTUBED" 61939.423934 ################
+    2.                  "AGE" 57692.344585 ##############
+    3.         "PATIENT_TYPE" 57051.931823 ##############
+    4.                  "ICU" 25096.496455 ######
+    5.         "MEDICAL_UNIT" 20459.449732 #####
+    6.            "PNEUMONIA" 16459.303432 ####
+    7. "CLASIFFICATION_FINAL" 12919.213335 ###
+    8.                "USMER" 5778.321165 #
+    9.             "DIABETES" 4715.167403 #
+   10.         "HIPERTENSION" 4237.080843 #
+   11.              "OBESITY" 3543.432051 
+   12.             "PREGNANT" 2697.343428 
+   13.                  "SEX" 2583.086224 
+   14.        "RENAL_CHRONIC" 1616.023674 
+   15.       "CARDIOVASCULAR" 1149.842040 
+   16.              "TOBACCO" 1053.621679 
+   17.        "OTHER_DISEASE" 735.429432 
+   18.                 "COPD" 647.034787 
+   19.              "INMSUPR" 463.631735 
+   20.               "ASTHMA" 243.372839 
+
+
+
+Out-of-bag evaluation: rmse:0.198058
+Number of trees: 300
+Total number of nodes: 223834
+
+Number of nodes by tree:
+Count: 300 Average: 746.113 StdDev: 49.2469
+Min: 603 Max: 883 Ignored: 0
+----------------------------------------------
+[ 603, 617)  2   0.67%   0.67%
+[ 617, 631)  3   1.00%   1.67% #
+[ 631, 645)  2   0.67%   2.33%
+[ 645, 659)  4   1.33%   3.67% #
+[ 659, 673)  9   3.00%   6.67% ##
+[ 673, 687)  9   3.00%   9.67% ##
+[ 687, 701) 23   7.67%  17.33% #####
+[ 701, 715) 28   9.33%  26.67% ######
+[ 715, 729) 29   9.67%  36.33% #######
+[ 729, 743) 28   9.33%  45.67% ######
+[ 743, 757) 33  11.00%  56.67% ########
+[ 757, 771) 44  14.67%  71.33% ##########
+[ 771, 785) 17   5.67%  77.00% ####
+[ 785, 799) 20   6.67%  83.67% #####
+[ 799, 813) 21   7.00%  90.67% #####
+[ 813, 827) 13   4.33%  95.00% ###
+[ 827, 841)  9   3.00%  98.00% ##
+[ 841, 855)  2   0.67%  98.67%
+[ 855, 869)  2   0.67%  99.33%
+[ 869, 883]  2   0.67% 100.00%
+
+Depth by leafs:
+Count: 112067 Average: 11.2889 StdDev: 2.73339
+Min: 1 Max: 15 Ignored: 0
+----------------------------------------------
+[  1,  2)     6   0.01%   0.01%
+[  2,  3)    77   0.07%   0.07%
+[  3,  4)   203   0.18%   0.26%
+[  4,  5)   525   0.47%   0.72%
+[  5,  6)  1488   1.33%   2.05% #
+[  6,  7)  3254   2.90%   4.96% ##
+[  7,  8)  5775   5.15%  10.11% ###
+[  8,  9)  8130   7.25%  17.36% #####
+[  9, 10) 10386   9.27%  26.63% ######
+[ 10, 11) 12323  11.00%  37.63% #######
+[ 11, 12) 13960  12.46%  50.08% ########
+[ 12, 13) 13667  12.20%  62.28% ########
+[ 13, 14) 13268  11.84%  74.12% ########
+[ 14, 15) 12011  10.72%  84.84% #######
+[ 15, 15] 16994  15.16% 100.00% ##########
+
+Number of training obs by leaf:
+Count: 112067 Average: 42.2908 StdDev: 243.859
+Min: 5 Max: 6196 Ignored: 0
+----------------------------------------------
+[    5,  314) 109847  98.02%  98.02% ##########
+[  314,  624)    992   0.89%  98.90%
+[  624,  933)    344   0.31%  99.21%
+[  933, 1243)    200   0.18%  99.39%
+[ 1243, 1553)    138   0.12%  99.51%
+[ 1553, 1862)    100   0.09%  99.60%
+[ 1862, 2172)     76   0.07%  99.67%
+[ 2172, 2481)     62   0.06%  99.73%
+[ 2481, 2791)     44   0.04%  99.76%
+[ 2791, 3101)     52   0.05%  99.81%
+[ 3101, 3410)     27   0.02%  99.83%
+[ 3410, 3720)      9   0.01%  99.84%
+[ 3720, 4029)     19   0.02%  99.86%
+[ 4029, 4339)     35   0.03%  99.89%
+[ 4339, 4649)     56   0.05%  99.94%
+[ 4649, 4958)     27   0.02%  99.97%
+[ 4958, 5268)     28   0.02%  99.99%
+[ 5268, 5577)      3   0.00%  99.99%
+[ 5577, 5887)      3   0.00% 100.00%
+[ 5887, 6196]      5   0.00% 100.00%
+
+Attribute in nodes:
+        52208 : AGE [NUMERICAL]
+        10216 : CLASIFFICATION_FINAL [NUMERICAL]
+        7802 : USMER [NUMERICAL]
+        5866 : DIABETES [NUMERICAL]
+        5820 : HIPERTENSION [NUMERICAL]
+        5707 : OBESITY [NUMERICAL]
+        4527 : SEX [NUMERICAL]
+        4445 : PREGNANT [NUMERICAL]
+        2953 : PNEUMONIA [NUMERICAL]
+        2682 : ICU [NUMERICAL]
+        1916 : RENAL_CHRONIC [NUMERICAL]
+        1530 : TOBACCO [NUMERICAL]
+        1154 : CARDIOVASCULAR [NUMERICAL]
+        1149 : INTUBED [NUMERICAL]
+        965 : MEDICAL_UNIT [NUMERICAL]
+        905 : OTHER_DISEASE [NUMERICAL]
+        724 : COPD [NUMERICAL]
+        628 : INMSUPR [NUMERICAL]
+        319 : PATIENT_TYPE [NUMERICAL]
+        251 : ASTHMA [NUMERICAL]
+
+Attribute in nodes with depth <= 0:
+        124 : PATIENT_TYPE [NUMERICAL]
+        87 : INTUBED [NUMERICAL]
+        40 : ICU [NUMERICAL]
+        24 : PNEUMONIA [NUMERICAL]
+        13 : AGE [NUMERICAL]
+        6 : MEDICAL_UNIT [NUMERICAL]
+        5 : DIABETES [NUMERICAL]
+        1 : HIPERTENSION [NUMERICAL]
+
+Attribute in nodes with depth <= 1:
+        213 : INTUBED [NUMERICAL]
+        179 : PATIENT_TYPE [NUMERICAL]
+        115 : PNEUMONIA [NUMERICAL]
+        113 : AGE [NUMERICAL]
+        94 : ICU [NUMERICAL]
+        75 : MEDICAL_UNIT [NUMERICAL]
+        50 : CLASIFFICATION_FINAL [NUMERICAL]
+        23 : DIABETES [NUMERICAL]
+        13 : HIPERTENSION [NUMERICAL]
+        6 : RENAL_CHRONIC [NUMERICAL]
+        6 : COPD [NUMERICAL]
+        3 : USMER [NUMERICAL]
+        2 : PREGNANT [NUMERICAL]
+        1 : OBESITY [NUMERICAL]
+        1 : INMSUPR [NUMERICAL]
+
+Attribute in nodes with depth <= 2:
+        403 : AGE [NUMERICAL]
+        343 : INTUBED [NUMERICAL]
+        265 : PNEUMONIA [NUMERICAL]
+        219 : PATIENT_TYPE [NUMERICAL]
+        201 : MEDICAL_UNIT [NUMERICAL]
+        169 : ICU [NUMERICAL]
+        157 : CLASIFFICATION_FINAL [NUMERICAL]
+        61 : DIABETES [NUMERICAL]
+        43 : USMER [NUMERICAL]
+        36 : RENAL_CHRONIC [NUMERICAL]
+        30 : HIPERTENSION [NUMERICAL]
+        23 : COPD [NUMERICAL]
+        17 : PREGNANT [NUMERICAL]
+        9 : SEX [NUMERICAL]
+        8 : OBESITY [NUMERICAL]
+        8 : INMSUPR [NUMERICAL]
+        7 : OTHER_DISEASE [NUMERICAL]
+        3 : TOBACCO [NUMERICAL]
+        2 : ASTHMA [NUMERICAL]
+        1 : CARDIOVASCULAR [NUMERICAL]
+
+Attribute in nodes with depth <= 3:
+        955 : AGE [NUMERICAL]
+        486 : PNEUMONIA [NUMERICAL]
+        479 : INTUBED [NUMERICAL]
+        445 : CLASIFFICATION_FINAL [NUMERICAL]
+        349 : MEDICAL_UNIT [NUMERICAL]
+        260 : ICU [NUMERICAL]
+        254 : PATIENT_TYPE [NUMERICAL]
+        170 : DIABETES [NUMERICAL]
+        162 : USMER [NUMERICAL]
+        95 : RENAL_CHRONIC [NUMERICAL]
+        80 : HIPERTENSION [NUMERICAL]
+        66 : COPD [NUMERICAL]
+        48 : OBESITY [NUMERICAL]
+        44 : PREGNANT [NUMERICAL]
+        32 : SEX [NUMERICAL]
+        27 : OTHER_DISEASE [NUMERICAL]
+        24 : INMSUPR [NUMERICAL]
+        19 : CARDIOVASCULAR [NUMERICAL]
+        17 : ASTHMA [NUMERICAL]
+        12 : TOBACCO [NUMERICAL]
+
+Attribute in nodes with depth <= 5:
+        4020 : AGE [NUMERICAL]
+        1634 : CLASIFFICATION_FINAL [NUMERICAL]
+        1109 : PNEUMONIA [NUMERICAL]
+        790 : INTUBED [NUMERICAL]
+        788 : USMER [NUMERICAL]
+        686 : MEDICAL_UNIT [NUMERICAL]
+        659 : DIABETES [NUMERICAL]
+        633 : ICU [NUMERICAL]
+        380 : HIPERTENSION [NUMERICAL]
+        379 : OBESITY [NUMERICAL]
+        371 : RENAL_CHRONIC [NUMERICAL]
+        283 : PATIENT_TYPE [NUMERICAL]
+        273 : SEX [NUMERICAL]
+        245 : PREGNANT [NUMERICAL]
+        221 : COPD [NUMERICAL]
+        157 : CARDIOVASCULAR [NUMERICAL]
+        153 : INMSUPR [NUMERICAL]
+        139 : OTHER_DISEASE [NUMERICAL]
+        110 : TOBACCO [NUMERICAL]
+        45 : ASTHMA [NUMERICAL]
