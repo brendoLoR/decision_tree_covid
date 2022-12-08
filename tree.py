@@ -8,14 +8,15 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 import math
 
-
-model = tfdf.keras.RandomForestModel(task=tfdf.keras.Task.REGRESSION)
+task = tfdf.keras.Task.CLASSIFICATION
+model = tfdf.keras.RandomForestModel(task=task)
 target = "OBITO"
+porcentagem_obito = 0
 
 
 def train():
     # Load a dataset in a Pandas dataframe.
-    df = pd.read_csv('datasets/COVID-SM.CSV', sep=';')
+    df = pd.read_csv('datasets/COVID.CSV', sep=';')
     # cols_to_drop = ["DATE_DIED"]
     cols_to_drop = ["SEX",  "RENAL_CHRONIC", "CARDIOVASCULAR", "ASTHMA",
                     "OTHER_DISEASE", "COPD", "INMSUPR", "DATE_DIED", "TOBACCO",
@@ -24,21 +25,40 @@ def train():
     df = df.drop(columns=cols_to_drop)
 
     # drop all dolumns with 97 and 99
+    df['CLASIFFICATION_FINAL'] = np.where(df['CLASIFFICATION_FINAL'] > 3, 2, 1)
     for label in df.head():
         df = df[df[label] != 97]
         df = df[df[label] != 99]
+        if (label != "AGE"):
+            df[label] = np.where(df[label] == 2, 0, 1)
 
-    fig, ax = plt.subplots()
-    plt.plot(df.AGE, df.OBITO, 'o')
-    ax.xaxis.set_tick_params(rotation=30, labelsize=10)
+    df_died = df[(df.OBITO == 1)]
 
-    plt.show()
+    porcentagem_obito = (len(df_died)/len(df)) * 100
 
-    fig, ax = plt.subplots()
-    plt.plot(df.AGE, df.CLASIFFICATION_FINAL, 'o')
-    ax.xaxis.set_tick_params(rotation=30, labelsize=10)
+    fig, axs = plt.subplots(2, 2)
+    axs[0, 0].hist(df.AGE, 15, rwidth=0.9)
+    axs[0, 0].hist(df_died.AGE, 15, rwidth=0.9)
+    axs[0, 0].grid(axis='y', alpha=0.75)
+    axs[0, 0].set_title("Idade")
 
-    plt.show()
+    axs[1, 0].hist(df.CLASIFFICATION_FINAL, 2,
+                   rwidth=0.9, orientation="horizontal")
+    axs[1, 0].hist(df_died.CLASIFFICATION_FINAL, 2,
+                   rwidth=0.9, orientation="horizontal")
+    axs[1, 0].grid(axis='x', alpha=0.75)
+    axs[1, 0].set_title("Resultado de teste para COVID")
+
+    axs[0, 1].hist(df.PNEUMONIA, 2, rwidth=0.9, orientation="horizontal")
+    axs[0, 1].hist(df_died.PNEUMONIA, 2, rwidth=0.9, orientation="horizontal")
+    axs[0, 1].grid(axis='x', alpha=0.75)
+    axs[0, 1].set_title("Pacientes com pneumonia")
+
+    axs[1, 1].hist(df.INTUBED, 2, rwidth=0.9, orientation="horizontal")
+    axs[1, 1].hist(df_died.INTUBED, 2, rwidth=0.9, orientation="horizontal")
+    axs[1, 1].grid(axis='x', alpha=0.75)
+    axs[1, 1].set_title("Pacientes que foram entubados")
+    fig.show()
 
     train_df, test_df = train_test_split(df, test_size=0.2,
                                          random_state=42,
@@ -47,9 +67,9 @@ def train():
     # Convert the dataset into a TensorFlow dataset.
 
     train_ds = tfdf.keras.pd_dataframe_to_tf_dataset(
-        train_df, label=target, task=tfdf.keras.Task.REGRESSION)
+        train_df, label=target, task=task)
     test_ds = tfdf.keras.pd_dataframe_to_tf_dataset(
-        test_df, label=target, task=tfdf.keras.Task.REGRESSION)
+        test_df, label=target, task=task)
 
     # Train a Random Forest model.
 
